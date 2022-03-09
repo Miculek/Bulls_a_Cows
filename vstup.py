@@ -4,7 +4,7 @@ import sys
 
 
 def pozdrav() -> int:
-    """pozdrav a výpis úvodní obrazovky, možná volba počtu číslic v hledané čísle"""
+    """pozdrav a úvodní obrazovka, volba počtu číslic v hledané čísle, počet číslic se vrací"""
     oddelovac = "-" * 50
     JELL = '\033[93m'
     CEND = '\033[0m'
@@ -22,20 +22,21 @@ def pozdrav() -> int:
                  """ + CEND)
     print(oddelovac)
     while (delka_cisla := input(JELL + "Yours choice must be number from (3,4,5): " + CEND)) not in "345":
-        pass
+        pass                    # umožní volit délku čísla 3,4,5 číslic
 
     print(JELL + "Let's play a bulls and cows game." + CEND, oddelovac, sep="\n")
     print(OKGREEN + "Press [Q/q] for end, else Enter a number: " + CEND, oddelovac, sep="\n")
+    # hláška [Q/q] vy patří k funkci "vstup_hráče()", ale nechci jí stále opakovat, tak je zde
     return int(delka_cisla)
 
 
 def vstup_hrace(pozadovana_delka=4) -> list:
-    """funkce načte vstup hráče, ověří zda je vstup validní a vrátí napsané číslo"""
+    """funkce načte tah hráče, ověří zda je vstupní hodnota validní a vrátí načtené číslo"""
     oddelovac = "-" * 60
     CRED = '\033[91m'
     CEND = '\033[0m'
     OKBLUE = '\033[94m'
-    while (cislo := input()) not in "Q/q":
+    while (cislo := input()) not in "Q/q":         # možnost ukočit hru (vzdát to)
         if len(cislo) != pozadovana_delka:
             print(CRED + f"Nesprávná velikost čísla! Požadovaný počet číslic je: {pozadovana_delka}" + CEND)
             print(oddelovac)
@@ -59,6 +60,5 @@ def vstup_hrace(pozadovana_delka=4) -> list:
 
 
 if __name__ == "__main__":
-    print(pozdrav())
- #  a = int(input("Zadej počet číslic: "))
- #  print(vstup_hrace(a))
+    a = pozdrav()
+    print(vstup_hrace(a))
