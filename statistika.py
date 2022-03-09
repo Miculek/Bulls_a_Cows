@@ -66,4 +66,3 @@ if __name__ == "__main__":
     veta1 = 'Martin;101756;1;00:07'
 
     # file_view('Table_WINNERS.txt')
-
