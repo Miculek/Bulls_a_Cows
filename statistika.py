@@ -13,7 +13,7 @@ def statistika_view(stat_hry: list) -> str:
     print(OKBLUE + "Correct, you've guessed the right number!" + CEND)
     print(" Tvé skóré je: {}\n Počet pokusu hádání byl: {}\n Délka hraní hry: {} [min:sec.]".format(*stat_hry))
     print(oddelovac)
-    print(JELL + "Would you like to enter your name to Table WINNERS?" + CEND)
+    print(JELL + "Would you like to enter your name to Table_WINNERS?" + CEND)
     name = input(OKGREEN + "If you want, then type your name, else press [Q/q] :" + CEND)
     if name in "Q/q":
         return ""            # prázný řetězec
@@ -48,9 +48,9 @@ def file_view(nazev: str):
     """funkce provede výpis tabulky vítězů, prvnich 15 záznamu """
     hlavicka = ["JMÉNO", "SKÓRE", "POKUSŮ", "ČAS [min:sec.]"]
     with open(nazev, mode='r', encoding='utf-8') as soubor:
-        print('\033[93m' + "_" * 50 + '\033[0m')
+        print('\033[93m' + "-" * 50 + '\033[0m')
         print('\033[94m' + "{:<12}|{:^10}|{:^10}|{:^17}".format(*hlavicka) + '\033[93m')
-        print("_" * 50)
+        print("-" * 50)
         for i, radek in enumerate(soubor):
             radek = radek.rstrip()
             slova = radek.split(";")
