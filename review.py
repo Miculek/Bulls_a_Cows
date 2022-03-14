@@ -3,7 +3,7 @@
 
 def review(vzor: list, odhad: list) -> tuple:
     """funkce porovná dvě čísla (vzor a odhad) a vyhodnotí shodu číslic"""
-    cows = len(set(vzor).intersection(set(odhad)))     # --  vracím pocet prvku průniku
+    cows = len(set(vzor).intersection(set(odhad)))           # vracím pocet prvku průniku
     bulls = 0
     for i in range(len(vzor)):
         if vzor[i] == odhad[i]:

@@ -4,7 +4,7 @@ import sys
 
 
 def pozdrav() -> int:
-    """pozdrav a úvodní obrazovka, volba počtu číslic v hledané čísle, počet číslic se vrací"""
+    """pozdrav a úvodní obrazovka, volba počtu číslic v hádaném čísle, počet číslic se vrací"""
     oddelovac = "-" * 50
     JELL = '\033[93m'
     CEND = '\033[0m'
@@ -26,12 +26,13 @@ def pozdrav() -> int:
 
     print(JELL + "Let's play a bulls and cows game." + CEND, oddelovac, sep="\n")
     print(OKGREEN + "Press [Q/q] for end, else Enter a number: " + CEND, oddelovac, sep="\n")
-    # hláška [Q/q] vy patří k funkci "vstup_hráče()", ale nechci jí stále opakovat, tak je zde
+    # hláška [Q/q]  patří k funkci "vstup_hráče()", ale nechci jí stále opakovat, tak je zde
+    # ve funkci "main" jí nechci a ve "vstup_hráče()" by musel být parametr "počet_pokusu" a podmínka
     return int(delka_cisla)
 
 
 def vstup_hrace(pozadovana_delka=4) -> list:
-    """funkce načte tah hráče, ověří zda je vstupní hodnota validní a vrátí načtené číslo"""
+    """funkce načte tah hráče, ověří zda je vstupní hodnota validní a vrátí načtené číslo jako list číslic"""
     oddelovac = "-" * 60
     CRED = '\033[91m'
     CEND = '\033[0m'

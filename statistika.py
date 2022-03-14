@@ -13,7 +13,7 @@ def statistika_view(stat_hry: list) -> str:
     print(OKBLUE + "Correct, you've guessed the right number!" + CEND)
     print(" Tvé skóré je: {}\n Počet pokusu hádání byl: {}\n Délka hraní hry: {} [min:sec.]".format(*stat_hry))
     print(oddelovac)
-    print(JELL + "Would you like to enter your name to Table_WINNERS?" + CEND)
+    print(JELL + "Would you like to write your name to Table_WINNERS?" + CEND)
     name = input(OKGREEN + "If you want, then type your name, else press [Q/q] :" + CEND)
     if name in "Q/q":
         return ""            # prázný řetězec
