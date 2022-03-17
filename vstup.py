@@ -26,8 +26,6 @@ def pozdrav() -> int:
 
     print(JELL + "Let's play a bulls and cows game." + CEND, oddelovac, sep="\n")
     print(OKGREEN + "Press [Q/q] for end, else Enter a number: " + CEND, oddelovac, sep="\n")
-    # hláška [Q/q]  patří k funkci "vstup_hráče()", ale nechci jí stále opakovat, tak je zde
-    # ve funkci "main" jí nechci a ve "vstup_hráče()" by musel být parametr "počet_pokusu" a podmínka
     return int(delka_cisla)
 
 

@@ -16,7 +16,7 @@ def statistika_view(stat_hry: list) -> str:
     print(JELL + "Would you like to write your name to Table_WINNERS?" + CEND)
     name = input(OKGREEN + "If you want, then type your name, else press [Q/q] :" + CEND)
     if name in "Q/q":
-        return ""            # prázný řetězec
+        return ""            # vrátím prázný řetězec nebo jméno
 
     return name
 
@@ -37,7 +37,7 @@ def do_file(veta: str) -> str:
                 vypis.insert(i, veta + "\n")
                 break
         else:
-            soubor.write(veta + "\n")          # připíše záznam na konec
+            soubor.write(veta + "\n")          # pokud je skoré nejmenší, připíše záznam na konec
             return 'Table_WINNERS.txt'
         soubor.seek(0)
         soubor.write("".join(vypis))    # zapíše setřízený list podle skoré
